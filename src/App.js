@@ -1,7 +1,9 @@
 import TopBar from './components/topBar/TopBar';
+import SideBar from './components/sideBar/SideBar';
+
+import Home from './pages/home/Home';
 
 import "./app.css";
-import SideBar from './components/sideBar/SideBar';
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -12,7 +14,7 @@ function App() {
       <div className="container">
         <SideBar />
         <Routes>
-          <Route exact path="/" />
+          <Route exact path="/" element={<Home />} />
         </Routes>
       </div>
     </Router>
