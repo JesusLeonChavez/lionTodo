@@ -4,6 +4,8 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
+import image from "../../image/todo.jpg";
+
 
 import "./cardHome.css"
 
@@ -14,7 +16,7 @@ export default function CardHome() {
         <CardMedia
           component="img"
           height="350"
-          image="/src/image/todo.jpg"
+          image={image}
         />
         <CardContent>
           <Typography gutterBottom variant="h3" component="div">
