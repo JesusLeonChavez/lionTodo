@@ -32,7 +32,7 @@ export default function SideBar() {
         <div className="sideBarMenu">
           <h3 className="sideBarTitle">Task</h3>
           <ul className="sideBarList">
-            <Link to="/users" className="link">
+            <Link to="/todos" className="link">
               <li className="sideBarListItem">
                 <PermIdentity className="sideBarIcon" />
                 To do

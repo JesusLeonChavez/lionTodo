@@ -2,6 +2,7 @@ import TopBar from './components/topBar/TopBar';
 import SideBar from './components/sideBar/SideBar';
 
 import Home from './pages/home/Home';
+import ToDo from './pages/toDo/ToDo';
 
 import "./app.css";
 
@@ -15,6 +16,7 @@ function App() {
         <SideBar />
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route path="/todos" element={<ToDo />} />
         </Routes>
       </div>
     </Router>
