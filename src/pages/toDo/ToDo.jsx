@@ -74,36 +74,36 @@ export default function ToDo() {
             Add Todo
           </button>
         </form>
-        {todos.map((todo) => (
-          <div key={todo.id} className="todo">
+        {todos.map((item) => (
+          <div key={item.id} className="todo">
             <div className="todoText">
               <input
                 type="checkbox"
                 id="completed"
-                checked={todo.completed}
-                onChange={() => toggleComplete(todo.id)}
+                checked={item.completed}
+                onChange={() => toggleComplete(item.id)}
               />
-              {todo.id === todoEditing ? (
+              {item.id === todoEditing ? (
                 <input
                   type="text"
                   onChange={(e) => setEditingText(e.target.value)}
                 />
               ) : (
-                <div>{todo.text}</div>
+                <div>{item.text}</div>
               )}
             </div>
             <div className="todoActions">
-              {todo.id === todoEditing ? (
+              {item.id === todoEditing ? (
                 <button
                   className="buttonEdit"
-                  onClick={() => submitEdits(todo.id)}
+                  onClick={() => submitEdits(item.id)}
                 >
                   Submit Edits
                 </button>
               ) : (
                 <button
                   className="buttonEdit"
-                  onClick={() => setTodoEditing(todo.id)}
+                  onClick={() => setTodoEditing(item.id)}
                 >
                   Edit
                 </button>
@@ -111,7 +111,7 @@ export default function ToDo() {
 
               <button
                 className="buttonDelete"
-                onClick={() => deleteTodo(todo.id)}
+                onClick={() => deleteTodo(item.id)}
               >
                 Delete
               </button>
