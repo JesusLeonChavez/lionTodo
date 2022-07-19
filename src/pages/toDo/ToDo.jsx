@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import "./toDo.css"
 
+import { DataGrid } from "@mui/x-data-grid";
+
 export default function ToDo() {
     const [todos, setTodos] = useState([]);
     const [todo, setTodo] = useState("");
@@ -61,6 +63,32 @@ export default function ToDo() {
           setTodoEditing(null);
     }
 
+    const columns = [
+      { field: "id", headerName: "ID", width: 190 },
+      {
+        field: "task",
+        headerName: "Tasks",
+        width: 250,
+        renderCell: (params) => {
+          return (
+            <>
+            {params.row.text}
+            </>
+          );
+        },
+      },
+      {
+        field: "status",
+        headerName: "Status",
+        width: 250,
+      },
+      {
+        field: "actions",
+        headerName: "Action",
+        width: 350,
+      },
+    ];
+
     return (
       <div className="toDoContainer">
         <h1 className="title">Todo List</h1>
@@ -74,7 +102,7 @@ export default function ToDo() {
             Add Todo
           </button>
         </form>
-        {todos.map((item) => (
+        {/* {todos.map((item) => (
           <div key={item.id} className="todo">
             <div className="todoText">
               <input
@@ -117,7 +145,15 @@ export default function ToDo() {
               </button>
             </div>
           </div>
-        ))}
+        ))} */}
+        <DataGrid
+          rows={todos}
+          disableSelectionOnClick
+          columns={columns}
+          pageSize={8}
+          rowsPerPageOptions={[3]}
+          checkboxSelection
+        />
       </div>
     );
 }
