@@ -71,21 +71,51 @@ export default function ToDo() {
         width: 250,
         renderCell: (params) => {
           return (
-            <>
-            {params.row.text}
-            </>
+            <div className="todoText">
+              {params.row.id === todoEditing ? (
+                <input
+                  type="text"
+                  onChange={(e) => setEditingText(e.target.value)}
+                />
+              ) : (
+                <div>{params.row.text}</div>
+              )}
+            </div>
           );
         },
-      },
-      {
-        field: "status",
-        headerName: "Status",
-        width: 250,
       },
       {
         field: "actions",
         headerName: "Action",
         width: 350,
+        renderCell: (params) => {
+          return (
+            <div className="todoActions">
+              {params.row.id === todoEditing ? (
+                <button
+                  className="buttonEdit"
+                  onClick={() => submitEdits(params.row.id)}
+                >
+                  Submit Edits
+                </button>
+              ) : (
+                <button
+                  className="buttonEdit"
+                  onClick={() => setTodoEditing(params.row.id)}
+                >
+                  Edit
+                </button>
+              )}
+
+              <button
+                className="buttonDelete"
+                onClick={() => deleteTodo(params.row.id)}
+              >
+                Delete
+              </button>
+            </div>
+          );
+        },
       },
     ];
 
@@ -152,7 +182,6 @@ export default function ToDo() {
           columns={columns}
           pageSize={8}
           rowsPerPageOptions={[3]}
-          checkboxSelection
         />
       </div>
     );
