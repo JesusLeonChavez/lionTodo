@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-
 import "./toDo.css"
-
 import { DataGrid } from "@mui/x-data-grid";
+import Box from "@mui/material/Box";
 
 export default function ToDo() {
     const [todos, setTodos] = useState([]);
@@ -64,11 +63,27 @@ export default function ToDo() {
     }
 
     const columns = [
-      { field: "id", headerName: "ID", width: 190 },
+      {
+        field: "completed",
+        headerName: "Completed",
+        width: 150,
+        renderCell: (params) => {
+          return (
+            <div className="todoText">
+              <input
+                type="checkbox"
+                id="completed"
+                checked={params.row.completed}
+                onChange={() => toggleComplete(params.row.id)}
+              />
+            </div>
+          );
+        },
+      },
       {
         field: "task",
         headerName: "Tasks",
-        width: 250,
+        width: 500,
         renderCell: (params) => {
           return (
             <div className="todoText">
@@ -87,7 +102,7 @@ export default function ToDo() {
       {
         field: "actions",
         headerName: "Action",
-        width: 350,
+        width: 500,
         renderCell: (params) => {
           return (
             <div className="todoActions">
@@ -132,57 +147,14 @@ export default function ToDo() {
             Add Todo
           </button>
         </form>
-        {/* {todos.map((item) => (
-          <div key={item.id} className="todo">
-            <div className="todoText">
-              <input
-                type="checkbox"
-                id="completed"
-                checked={item.completed}
-                onChange={() => toggleComplete(item.id)}
-              />
-              {item.id === todoEditing ? (
-                <input
-                  type="text"
-                  onChange={(e) => setEditingText(e.target.value)}
-                />
-              ) : (
-                <div>{item.text}</div>
-              )}
-            </div>
-            <div className="todoActions">
-              {item.id === todoEditing ? (
-                <button
-                  className="buttonEdit"
-                  onClick={() => submitEdits(item.id)}
-                >
-                  Submit Edits
-                </button>
-              ) : (
-                <button
-                  className="buttonEdit"
-                  onClick={() => setTodoEditing(item.id)}
-                >
-                  Edit
-                </button>
-              )}
-
-              <button
-                className="buttonDelete"
-                onClick={() => deleteTodo(item.id)}
-              >
-                Delete
-              </button>
-            </div>
-          </div>
-        ))} */}
-        <DataGrid
-          rows={todos}
-          disableSelectionOnClick
-          columns={columns}
-          pageSize={8}
-          rowsPerPageOptions={[3]}
-        />
+        <Box sx={{ height: 620, width: "100%" }}>
+          <DataGrid
+            rows={todos}
+            columns={columns}
+            pageSize={10}
+            rowsPerPageOptions={[5]}
+          />
+        </Box>
       </div>
     );
 }

@@ -1,11 +1,10 @@
 .toDoContainer{
     flex: 4;
     padding: 20px;
-    width: 500px;
-    margin: 60px auto;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
-.title{
+.title {
     text-align: center;
 }
 
@@ -32,7 +31,7 @@ form input {
     flex-direction: column;
 }
 
-.buttonAdd{
+.buttonAdd {
     font-size: 16px;
     background-color: #00B74A;
     color: #fff;
@@ -40,6 +39,7 @@ form input {
     border: none;
     padding: 8px 16px;
     cursor: pointer;
+    width: 150px;
 }
 
 .buttonAdd:active {
@@ -50,7 +50,7 @@ form input {
     background-color: #3bb077
 }
 
-.buttonDelete{
+.buttonDelete {
     font-size: 16px;
     background-color: red;
     color: #fff;
@@ -58,6 +58,8 @@ form input {
     border: none;
     padding: 8px 16px;
     cursor: pointer;
+    width: 150px;
+    margin: 35px;
 }
 
 .buttonDelete:active {
@@ -68,7 +70,7 @@ form input {
     background-color: #C62828
 }
 
-.buttonEdit{
+.buttonEdit {
     font-size: 16px;
     background-color: #1266F1;
     color: #fff;
@@ -76,6 +78,8 @@ form input {
     border: none;
     padding: 8px 16px;
     cursor: pointer;
+    width: 150px;
+    margin: 35px;
 }
 
 .buttonEdit:active {
@@ -118,6 +122,6 @@ input[type='text'] {
 }
 
 .todoActions {
-    display: flex;
-    justify-content: space-between;
+    display:flexbox;
+    justify-content:space-evenly;
 }
