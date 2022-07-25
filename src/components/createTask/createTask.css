@@ -1,0 +1,37 @@
+.title {
+    text-align: center;
+}
+
+form {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+form input {
+    border-radius: 8px;
+    padding: 4px 8px;
+    flex-grow: 1;
+    margin-right: 16px;
+}
+
+.buttonAdd {
+    font-size: 16px;
+    background-color: #00B74A;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    width: 150px;
+}
+
+.buttonAdd:active {
+    background-color: #3bb077
+}
+
+.buttonAdd:hover {
+    background-color: #3bb077
+}

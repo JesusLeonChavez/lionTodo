@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./toDo.css"
 import { DataGrid } from "@mui/x-data-grid";
 import Box from "@mui/material/Box";
+import CreateTask from "../../components/createTask/CreateTask";
 
 export default function ToDo() {
     const [todos, setTodos] = useState([]);
@@ -21,20 +22,6 @@ export default function ToDo() {
         const json = JSON.stringify(todos);
         localStorage.setItem("todos", json);
     }, [todos]);
-    
-
-    function handleSubmit(e){
-        e.preventDefault();
-
-        const newTodo = {
-            id: new Date().getTime(),
-            text: todo,
-            completed: false,
-        };
-
-        setTodos([...todos].concat(newTodo));
-        setTodo("");
-    }
 
     function toggleComplete(id){
         let updateTodos = [...todos].map((todo) => {
@@ -136,17 +123,12 @@ export default function ToDo() {
 
     return (
       <div className="toDoContainer">
-        <h1 className="title">Todo List</h1>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            onChange={(e) => setTodo(e.target.value)}
-            value={todo}
-          />
-          <button className="buttonAdd" type="submit">
-            Add Todo
-          </button>
-        </form>
+        <CreateTask 
+          todo={todo} 
+          setTodo={setTodo} 
+          todos={todos} 
+          setTodos={setTodos}
+        />
         <Box sx={{ height: 620, width: "100%" }}>
           <DataGrid
             rows={todos}
