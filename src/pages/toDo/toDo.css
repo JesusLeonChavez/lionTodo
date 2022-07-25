@@ -1,7 +1,6 @@
 .toDoContainer{
     flex: 4;
     padding: 20px;
-    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .buttonDelete {
@@ -49,33 +48,11 @@ button:focus {
 }
   
 input[type='text'] { 
-    font-size: 20px; 
+    font-size: 16px; 
 }
 
 .todo input[type="checkbox"] {
     transform: scale(1.8) translateY(1px);
     margin: 0 16px 0 0;
     cursor: pointer;
-}
-
-.todoText input {
-    padding: 4px;
-}
-
-.todoText {
-    font-size: 24px;
-    line-height: 24px;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-}
-
-.todo-completed {
-    display: flex;
-    margin: 10px 0;
-}
-
-.todoActions {
-    display:flexbox;
-    justify-content:space-evenly;
 }

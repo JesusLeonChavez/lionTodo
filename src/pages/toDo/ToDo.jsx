@@ -88,7 +88,7 @@ export default function ToDo() {
       },
       {
         field: "actions",
-        headerName: "Action",
+        headerName: "Actions",
         width: 500,
         renderCell: (params) => {
           return (
