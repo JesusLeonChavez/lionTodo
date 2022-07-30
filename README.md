@@ -1,7 +1,7 @@
 # Lion ToDo
 
 ## Description
-cards
+Application that allows you to fulfill your tasks
 
 ## STACK
 - HTML5
