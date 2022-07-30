@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/lionTodo/static/css/main.e590f156.css",
+    "main.js": "/lionTodo/static/js/main.216e8077.js",
+    "static/media/todo.jpg": "/lionTodo/static/media/todo.f9038a93c8d1da8aa9a6.jpg",
+    "index.html": "/lionTodo/index.html",
+    "main.e590f156.css.map": "/lionTodo/static/css/main.e590f156.css.map",
+    "main.216e8077.js.map": "/lionTodo/static/js/main.216e8077.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e590f156.css",
+    "static/js/main.216e8077.js"
+  ]
+}
